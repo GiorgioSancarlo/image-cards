@@ -73,25 +73,22 @@ a:visited {
   flex-direction: column;
   align-items: center;
   height: fit-content;
-  /*gap: 3%;*/
+  background-color: rgb(226, 217, 217);
   border: 1px solid black;
 }
 
 .add-pref {
   position: absolute;
   top: 0%;
-  left: 40%;
-  color: white;
+  left: 80%;
+  width: 35px;
+  height: 35px;
+  transform: rotate(180deg);
 }
 
 .add-pref:hover {
   cursor: pointer;
 }
-
-/*img {
-  width: 30px;
-  height: 30px;
-}*/
 
 button:hover {
   cursor: pointer;
