@@ -1,7 +1,5 @@
 /** @format */
 
-//export let images: any = [];
-
 export const mapNodes = {
   container: 'container',
   contCard: 'cont-card',
@@ -16,12 +14,6 @@ export const mapNodes = {
 } as const;
 
 export type NodeID = (typeof mapNodes)[keyof typeof mapNodes];
-
-/*export type Immagine = {
-  src: string;
-  title: string;
-  comment: string;
-};*/
 
 export class Immagine {
   constructor(path: string, tit: string, comm: string) {
