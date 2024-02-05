@@ -54,12 +54,24 @@ body {
 }
 
 .cont-img {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: fit-content;
   /*gap: 3%;*/
   border: 1px solid black;
+}
+
+.add-pref {
+  position: absolute;
+  top: 0%;
+  left: 90%;
+  color: white;
+}
+
+.add-pref:hover {
+  cursor: pointer;
 }
 
 button:hover {
