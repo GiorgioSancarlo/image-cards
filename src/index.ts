@@ -37,7 +37,7 @@ function onPref(): any {
     const imgs = pref
       .map(
         (element: Immagine) =>
-          `<div class="cont-img"><img src=${element.src}><p class="add-pref">Pref</p><b>${element.title}</b><p>${element.comment}</p></div>`,
+          `<div class="cont-img"><img src=${element.src}><p class="add-pref">REMOVE</p><b>${element.title}</b><p>${element.comment}</p></div>`,
       )
       .join('');
 
@@ -53,7 +53,7 @@ function onShowCard(): any {
     const imgs = images
       .map(
         (element: Immagine) =>
-          `<div class="cont-img"><img src=${element.src}><p class="add-pref">Pref</p><b>${element.title}</b><p>${element.comment}</p></div>`,
+          `<div class="cont-img"><img src=${element.src}><p class="add-pref">FAVORITES</p><b>${element.title}</b><p>${element.comment}</p></div>`,
       )
       .join('');
 
@@ -98,9 +98,9 @@ function onAddCard() {
   btn.disabled = true;
 
   if (nodeHTML.innerHTML == 'NESSUNA IMMAGINE')
-    nodeHTML.innerHTML = `<div class="cont-img"><img src=${img.src}><p class="add-pref">Pref</p><b>${img.title}</b><p>${img.comment}</p></div>`;
+    nodeHTML.innerHTML = `<div class="cont-img"><img src=${img.src}><p class="add-pref">FAVORITES</p><b>${img.title}</b><p>${img.comment}</p></div>`;
   else
-    nodeHTML.innerHTML += `<div class="cont-img"><img src=${img.src}><p class="add-pref">Pref</p><b>${img.title}</b><p>${img.comment}</p></div>`;
+    nodeHTML.innerHTML += `<div class="cont-img"><img src=${img.src}><p class="add-pref">FAVORITES</p><b>${img.title}</b><p>${img.comment}</p></div>`;
 
   aggPref();
 }
@@ -116,10 +116,11 @@ function aggPref() {
           if (b.src == images[j].src) {
             if (images[j].pref == true) {
               images[j].pref = false;
+              p.innerHTML = 'FAVORITES';
               localStorage.pref = parseInt(localStorage.pref) - 1;
             } else {
               images[j].pref = true;
-              p.style.color = 'red';
+              p.innerHTML = 'REMOVE';
               localStorage.pref = parseInt(localStorage.pref) + 1;
             }
             localStorage.Immagini = JSON.stringify(images);

@@ -1,5 +1,7 @@
 /** @format */
 
+//export let images: any = [];
+
 export const mapNodes = {
   container: 'container',
   contCard: 'cont-card',
